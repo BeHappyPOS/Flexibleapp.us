@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('service_categories', function (Blueprint $table) {
             $table->id();
             $table->string('serv_cate_name')->unique();
-            $table->string('create_at');
-            $table->string('update_at');
             $table->timestamps();
         });
     }

@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
             $table->string('pro_cate_name')->unique();
-            $table->string('create_at');
-            $table->string('update_at');
             $table->timestamps();
         });
     }

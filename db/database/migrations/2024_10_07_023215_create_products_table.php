@@ -18,8 +18,6 @@ return new class extends Migration
             $table->float('price',10, 2);
             $table->string('content')->nullable();
             $table->string('note')->nullable();
-            $table->string('create_at')->nullable();
-            $table->string('update_at')->nullable();
             $table->timestamps();
         });
     }

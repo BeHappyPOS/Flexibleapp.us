@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('SNN')->nullable();
             $table->string('address')->nullable();
             $table->string('note')->nullable();
+            $table->string('staff_skills')->unique();
+            $table->string('staff_status')->unique();
             $table->timestamp('login_at')->nullable();
             $table->timestamp('change_password_at')->nullable();
             $table->timestamps();

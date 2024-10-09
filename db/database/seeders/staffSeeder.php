@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use faker\factory as faker;
 
 class staffSeeder extends Seeder
 {
@@ -12,15 +13,20 @@ class staffSeeder extends Seeder
      */
     public function run(): void
     {
-        \DB::table("staff")->insert([
-            "staff_name"=>"Anna",
-            "nick_name" => "Anna",
-            "phone" => "9877789876",
-            "address"=>"2551 NW 5th St",
-            "email"=>"anna@flexibleapp.com",
-            "staff_skills"=>"1",
-            "staff_status"=>"1",
-            "password" => \Hash::make("abc123")
-        ]);
+        $faker = factory::create();
+        foreach(reach(1,20)as $index){
+            \DB::table("staff")->insert([
+                'name'=>$faker->name,
+                'phone' =>$faker->phone,
+                'address'=>$faker->address,
+                'email'=>$faker->email,
+                'skills'=>1,
+                'status'=>1,
+                'password' =>$faker->password, \Hash::make("abc123")
+            
+            ]);
+
+        }
+        
     }
 }
